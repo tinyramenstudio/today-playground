@@ -14,6 +14,9 @@ devDependencies:
   '@iconify-json/twemoji':
     specifier: ^1.1.12
     version: 1.1.12
+  '@mobiscroll/vue':
+    specifier: 5.27.3
+    version: 5.27.3(vue@3.3.8)
   '@nuxtjs/color-mode':
     specifier: ^3.3.2
     version: 3.3.2(rollup@2.79.1)
@@ -1989,6 +1992,14 @@ packages:
       - supports-color
     dev: true
 
+  /@mobiscroll/vue@5.27.3(vue@3.3.8):
+    resolution: {integrity: sha512-jiAZ1d8blRpnHK1IVpgTAEZLF6FOjdN/3XfABI1PwnfA4C4yiijdShA9Gde7//U99m8uHZ8dm1qXwCi8Kg6A3A==}
+    peerDependencies:
+      vue: '>=3.0.0'
+    dependencies:
+      vue: 3.3.8(typescript@5.3.2)
+    dev: true
+
   /@netlify/functions@2.4.0:
     resolution: {integrity: sha512-dIqhdj5u4Lu/8qbYwtYpn8NfvIyPHbSTV2lAP4ocL+iwC9As06AXT0wa/xOpO2vRWJa0IMxdZaqCPnkyHlHiyg==}
     engines: {node: '>=14.0.0'}
@@ -2442,6 +2453,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -7252,6 +7264,10 @@ packages:
     resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
     engines: {node: ^14 || ^16 || >=18}
     hasBin: true
+    dev: true
+
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
     dev: true
 
   /natural-compare-lite@1.4.0:
