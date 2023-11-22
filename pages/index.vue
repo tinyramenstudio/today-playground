@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import '@mobiscroll/vue/dist/css/mobiscroll.min.css'
-import { MbscEventcalendar, type MbscEventcalendarOptions } from '@mobiscroll/vue'
+import { MbscDraggable, MbscEventcalendar, type MbscEventcalendarOptions } from '@mobiscroll/vue'
 import { useSortable } from '@vueuse/integrations/useSortable'
 
 const options: MbscEventcalendarOptions = {
@@ -21,22 +21,33 @@ const tasks = ref([
   { id: 4, title: 'task d' },
 ])
 
-const el = ref(null)
+const container = ref(null)
+const taskElements = ref([])
 
-useSortable(el, tasks)
+useSortable(container, tasks)
+
+const draggableToCalendar = true
 </script>
 
 <template>
   <div class="flex">
     <div
-      ref="el"
+      ref="container"
       class="grow p-20 space-y-1"
     >
       <div
-        v-for="task in tasks" :key="task.id"
+        v-for="(task, i) in tasks"
+        ref="taskElements"
+        :key="task.id"
         class="cursor-move border rounded px-2 py-1"
       >
         {{ task.title }}
+
+        <MbscDraggable
+          v-if="draggableToCalendar"
+          :drag-data="task"
+          :element="taskElements[i]"
+        />
       </div>
     </div>
 
